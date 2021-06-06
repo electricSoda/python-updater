@@ -3,6 +3,7 @@ print("Hi")
 import requests
 import re
 import os
+import uuid
 
 class Updater:
     def __init__(self, target_link):
@@ -34,6 +35,9 @@ class Updater:
         fname = url.split("/")
         fname = fname[len(fname)-1]
         return fname
+
+    def uid():
+        return uuid.uuid1()
 
 
 u = Updater("https://github.com/electricSoda/python-updater/blob/main/updater.py")
