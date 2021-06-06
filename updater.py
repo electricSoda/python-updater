@@ -3,7 +3,7 @@ print("Hi")
 import requests
 import re
 
-class Update:
+class Updater:
     def __init__(self, target_link):
         self.target_link = target_link
 
@@ -17,4 +17,4 @@ class Update:
         return fname
 
 
-Update("")
+Updater("https://github.com/electricSoda/python-updater/blob/main/updater.py")
