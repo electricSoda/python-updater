@@ -37,4 +37,4 @@ class Updater:
 
 
 u = Updater("https://github.com/electricSoda/python-updater/blob/main/updater.py")
-u.checkUpdate("https://raw.githubusercontent.com/electricSoda/python-updater/main/upatebranch.txt")
+u.checkUpdate("https://raw.githubusercontent.com/electricSoda/python-updater/main/updatebranch.txt")
