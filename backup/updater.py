@@ -31,6 +31,19 @@ class Updater:
         filename = self.getFileName(self.target_link)
         open(filename, "wb").write(r.content)
 
+    def updateChanges(self):
+        os.chdir("C:\\teleport\\Code\\Python Updating Concept\\")
+
+        pathtonewfile = "updated/updater.py"
+        a = open(pathtonewfile, 'r')
+        newContents = a.read()
+        a.close()
+
+        with open("updater.py", "w") as f:
+            f.write(newContents)
+            f.close()
+
+
     def getFileName(self, url):
         fname = url.split("/")
         fname = fname[len(fname)-1]
@@ -40,5 +53,9 @@ class Updater:
         return uuid.uuid1()
 
 
-u = Updater("https://github.com/electricSoda/python-updater/blob/main/updater.py")
-u.checkUpdate("https://raw.githubusercontent.com/electricSoda/python-updater/main/updatebranch.txt")
+u = Updater("https://raw.githubusercontent.com/electricSoda/python-updater/main/updater.py")
+check = u.checkUpdate("https://raw.githubusercontent.com/electricSoda/python-updater/main/updatebranch.txt")
+
+if check:
+    u.update()
+    u.updateChanges()

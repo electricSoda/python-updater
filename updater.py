@@ -1,4 +1,4 @@
-print("Hi")
+print("Hi THIS IS AN UPDATE")
 
 import requests
 import re
@@ -43,6 +43,13 @@ class Updater:
             f.write(newContents)
             f.close()
 
+    def updateBranch(self):
+        globalF = open("updatebranch.txt", "r")
+        id = globalF.readline()
+
+        f = open("updatebranchLOCAL.txt", "w")
+        f.write(id)
+        f.close()
 
     def getFileName(self, url):
         fname = url.split("/")
@@ -59,3 +66,4 @@ check = u.checkUpdate("https://raw.githubusercontent.com/electricSoda/python-upd
 if check:
     u.update()
     u.updateChanges()
+    u.updateBranch()
